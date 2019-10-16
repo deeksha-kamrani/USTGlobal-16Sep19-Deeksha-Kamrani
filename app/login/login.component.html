@@ -1,0 +1,28 @@
+<form action="" class="col-md-4 offset-4 mt-5 card cardbody" #form="ngForm" (ngSubmit)="login(form)">
+    <h2 class="text-center bg-success text-white">Login</h2>
+    <div class="form-group">
+        <input type="text" name="text" id="text" class="form-control" placeholder="Please Login.." #text="ngModel" ngModel required>
+        <div *ngIf="text.touched && text.invalid">
+            <p class="alert alert-danger" *ngIf="text.errors.required">*this field is required</p>
+        </div>  
+    </div>
+    
+      <div class="form-group">
+          <input type="text" name="dropdown" id="dropdown" class="form-control" placeholder="Enter Email.." #dropdown="ngModel" ngModel required>
+      <div *ngIf="dropdown.touched && dropdown.invalid">
+          <p class="alert alert-danger" *ngIf="dropdown.errors.required">*this field is required</p>
+      </div>
+        </div>
+    
+      <div class="form-group">
+      <input type="text" name="skill" id="skill" class="form-control" placeholder="Enter Password.." #skill="ngModel" ngModel required>
+      <div *ngIf="skill.touched && skill.invalid">
+    <p class="alert alert-danger" *ngIf="skill.errors.required">*this Feild is required</p>
+      </div>  
+    </div>
+    
+      <div class="form-group">
+          <button class="submit btn-outline-info float-right" [disabled]="form.invalid">Login</button>
+      </div>
+    
+      </form>
