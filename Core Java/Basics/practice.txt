@@ -1,0 +1,8 @@
+class practice{
+public static void main(String[] args)
+{
+float x= 30.77;
+long y= x;
+System.out.println(y);
+}
+}
