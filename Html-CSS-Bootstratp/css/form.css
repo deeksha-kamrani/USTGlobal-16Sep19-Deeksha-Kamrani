@@ -1,0 +1,58 @@
+form{
+    border: 1px solid black;
+    width: 450px;
+    height: 320px;
+    background-color: rgba(255, 218, 185, 0.596);
+    margin: 150px 450px  ;
+    text-align: center;
+    font-size: 25px;
+    font-family: cursive;
+    border-radius: 25px;
+    background-image: url(/image/2.jpg);
+    background-size: cover;
+    color:whitesmoke;
+}
+body{
+    background-image: url(/image/4.jpg);
+         background-size: cover;
+}
+input[type = "text"], input[type ="password"]{
+    width: 225px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 25px;
+    text-align: center;
+    
+}
+
+input[type = "text"]:focus, input[type ="password"]{
+  outline: none;
+  border: 1px solid red;
+}
+
+input[type="submit"]{
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: tomato;
+    color: black;
+    outline: none;
+    border: 1px solid red;   
+}
+
+input[type="submit"]:hover{
+    background-color: greenyellow;
+
+}
+
+#dk{
+    color: aqua;
+}
+
+#deeksha{
+    color: yellow;
+}
+
+#head{
+    color: black;
+}
