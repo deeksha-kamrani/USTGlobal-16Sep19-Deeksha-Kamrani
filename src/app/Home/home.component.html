@@ -1,0 +1,14 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="text-center col-md-5 offset-4 mt-5">
+            <input type="search" class="col-md-6" placeholder="search" (keyup)="selectedSearch($event)">
+
+        </div>
+    </div>
+</div>
+<div class="card card-body col-md-4" *ngFor="let s of searchs">
+    <img src="{{s.Poster}}" alt="">
+    <h2>{{s.Title}}</h2>
+    <h2>{{s.Year}}</h2>
+
+</div>
