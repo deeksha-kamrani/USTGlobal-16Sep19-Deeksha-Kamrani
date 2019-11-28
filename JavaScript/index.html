@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript</title>
+
+    <script>
+    var age=22;
+    console.log('Age = '+age);
+    var name= "Chhota Bheem";
+    console.log('Name ='+name);
+    var hasHobbies =true;
+    console.log('Has Hobbies ='+hasHobbies);
+    var data =null;
+    console.log('Data ='+data);
+    var married;
+    console.log('Married = '+married);
+    </script>
+    
+</head>
+<body>
+   <script>
+   var fruits = ['Orange','Mango','Apple','PineApple'];
+   console.log('Fruits =',fruits);
+   console.log('Fruit1 = ',fruits[0]);
+   console.log('Fruits Length= ', fruits.length);
+
+   var person = {
+                   FirstName : 'Alia Bhatt',
+                   LastName : 'Ranbir',
+                   age : 26,
+                   phoneno : 89898,
+                   getFullName :function()
+                   {
+                       return this.FirstName + ' ' + this.LastName
+                   }
+                }
+                var LastName =person.LastName;
+                console.log('Last Name' ,LastName);
+                var personAge = person.age;
+                console.log('Age ',personAge);
+                var fullName = person.getFullName();
+                console.log('FullName ', fullName);
+                console.log('=====================');
+                var a =10;
+                var str ='10';
+                if(a!==str)
+                {
+                    console.log('Equal');
+                }else
+                {
+                    console.log('Not Equal');
+                }
+
+                console.log('===================');
+                var numberValue =20;
+                console.log(typeof numberValue);
+                var fname = 'Bhagat Singh';
+                console.log(typeof fname);
+                var lname = null;
+                console.log(typeof lname);
+                var fullNam;
+                console.log(typeof fullNam);
+
+                if(name===null)
+                {
+                    console.log('equal');
+                }
+                else
+                {
+                    console.log('not equal');
+                }
+   </script> 
+</body>
+</html>
