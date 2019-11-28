@@ -1,0 +1,76 @@
+<form action="" class="col-md-4 offset-4 mt-5 card cardbody" #form="ngForm" (ngSubmit)="addData(form)">
+        <h2 class="text-center bg-info text-white">Form3</h2>
+        <div class="form-group">
+            <input type="text" name="text" id="text" class="form-control" placeholder="UserName.." #text="ngModel" ngModel required>
+            <div *ngIf="text.touched && text.invalid">
+                <p class="alert alert-danger" *ngIf="text.errors.required">*this field is required</p>
+            </div>  
+        </div>
+        
+          <div class="form-group">
+              <input type="text" name="dropdown" id="dropdown" class="form-control" placeholder="UserPage.." #dropdown="ngModel" ngModel required>
+          <div *ngIf="dropdown.touched && dropdown.invalid">
+              <p class="alert alert-danger" *ngIf="dropdown.errors.required">*this field is required</p>
+          </div>
+            </div>
+        
+          
+        <div class="form-group">
+            <label for="">Gender</label>
+            
+            <div class="radio">
+                <label>
+                    <input type="radio" name="male" id="male" value="male" checked="checked">
+                    Male
+                </label>
+            </div>
+
+            <div class="radio">
+                    <label>
+                        <input type="radio" name="male" id="female" value="female" checked="checked">
+                        Female
+                    </label>
+                </div>
+
+                <div class="radio">
+                        <label>
+                            <input type="radio" name="male" id="others" value="others" checked="checked">
+                            Other
+                        </label>
+                    </div>
+            
+        </div>
+
+        <div class="form-group">
+                <input type="email" name="email"  class="form-control" placeholder="User Email.." #email="ngModel" ngModel required>
+                <div *ngIf="email.touched && email.invalid">
+                      <p class="alert alert-danger" *ngIf="email.errors.required">*this Feild is required</p>
+                        </div>
+              </div>
+
+              <div class="form-group">
+                    <input type="number" name="number"  class="form-control" placeholder="User Contact Number.." #number="ngModel" ngModel required>
+                    <div *ngIf="number.touched && number.invalid">
+                          <p class="alert alert-danger" *ngIf="number.errors.required">*this Feild is required</p>
+                            </div>
+                  </div>
+        
+          <div class="form-group">
+              <input type="password" name="pass"  class="form-control" placeholder="Password.." #pass="ngModel" ngModel required>
+              <div *ngIf="pass.touched && pass.invalid">
+                    <p class="alert alert-danger" *ngIf="pass.errors.required">*this Feild is required</p>
+                      </div>
+            </div>
+
+            <div class="form-group">
+                    <input type="password" name="passw"  class="form-control" placeholder="Re-type Password.." #passw="ngModel" ngModel required>
+                    <div *ngIf="passw.touched && passw.invalid">
+                          <p class="alert alert-danger" *ngIf="passw.errors.required">*this Feild is required</p>
+                            </div>
+                  </div>
+        
+          <div class="form-group">
+              <button class="submit btn-outline-danger float-right">Add User</button>
+          </div>
+        
+          </form>

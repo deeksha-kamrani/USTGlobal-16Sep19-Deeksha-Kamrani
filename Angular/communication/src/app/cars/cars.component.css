@@ -1,0 +1,9 @@
+.col-md-4.mt-2.float-left.card.card-body{
+overflow: scroll;
+height: 600px;
+}
+h1{
+    text-align: center;
+    font-family: cursive;
+    color: indianred;
+}

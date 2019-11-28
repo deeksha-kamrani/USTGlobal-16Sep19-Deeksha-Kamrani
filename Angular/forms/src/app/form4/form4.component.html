@@ -1,0 +1,35 @@
+<form action="" class="col-md-4 offset-4 mt-5 card cardbody" #form="ngForm" (ngSubmit)="addData(form)">
+        <h2 class="text-center bg-danger text-white">Form4</h2>
+        <div class="form-group">
+            <input type="text" name="text" id="text" class="form-control" placeholder="Product Name.." #text="ngModel" ngModel required>
+            <div *ngIf="text.touched && text.invalid">
+                <p class="alert alert-danger" *ngIf="text.errors.required">*this field is required</p>
+            </div>  
+        </div>
+        
+          <div class="form-group">
+              <input type="text" name="dropdown" id="dropdown" class="form-control" placeholder="Product Price.." #dropdown="ngModel" ngModel required>
+          <div *ngIf="dropdown.touched && dropdown.invalid">
+              <p class="alert alert-danger" *ngIf="dropdown.errors.required">*this field is required</p>
+          </div>
+            </div>
+        
+          <div class="form-group">
+          <input type="text" name="skill" id="skill" class="form-control" placeholder="Product Description.." #skill="ngModel" ngModel required>
+          <div *ngIf="skill.touched && skill.invalid">
+        <p class="alert alert-danger" *ngIf="skill.errors.required">*this Feild is required</p>
+          </div>  
+        </div>
+        
+        <div class="form-group">
+                <input type="text" name="mctc"  class="form-control" placeholder="Product ImageUrl.." #mctc="ngModel" ngModel required>
+                <div *ngIf="mctc.touched && mctc.invalid">
+                      <p class="alert alert-danger" *ngIf="mctc.errors.required">*this Feild is required</p>
+                        </div>
+              </div>
+        
+          <div class="form-group">
+              <button class="submit btn-outline-primary float-right">Add Product</button>
+          </div>
+        
+          </form>

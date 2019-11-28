@@ -1,0 +1,70 @@
+<form action="" class="col-md-4 offset-4 mt-5 card cardbody" #form="ngForm" (ngSubmit)="addData(form)">
+        <h2 class="text-center bg-warning text-white">Form2</h2>
+        <div class="form-group">
+            <input type="text" name="text" id="text" class="form-control" placeholder="Candidate Name.." #text="ngModel" ngModel required>
+            <div *ngIf="text.touched && text.invalid">
+                <p class="alert alert-danger" *ngIf="text.errors.required">*this field is required</p>
+            </div>  
+        </div>
+        
+          <div class="form-group">
+              <input type="text" name="dropdown" id="dropdown" class="form-control" placeholder="Year of Experience.." #dropdown="ngModel" ngModel required>
+          <div *ngIf="dropdown.touched && dropdown.invalid">
+              <p class="alert alert-danger" *ngIf="dropdown.errors.required">*this field is required</p>
+          </div>
+            </div>
+        
+          <div class="form-group">
+          
+          <label for="">Skills..</label>
+          <div class="checkbox" >
+              <label>
+                  <input type="checkbox" value="Java" >
+                  Java
+              </label>
+          </div>
+          
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" value="Sql">
+                  SQL
+              </label>
+          </div>
+         
+          
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" value="Angular">
+                  Angular
+              </label>
+          </div>
+           
+         
+        </div>
+
+        <div class="form-group">
+                <input type="text" name="cctc"  class="form-control" placeholder="C C T C.." #cctc="ngModel" ngModel required>
+                <div *ngIf="cctc.touched && cctc.invalid">
+                      <p class="alert alert-danger" *ngIf="cctc.errors.required">*this Feild is required</p>
+                        </div>
+              </div>
+
+              <div class="form-group">
+                    <input type="text" name="ectc"  class="form-control" placeholder="E C T C.." #ectc="ngModel" ngModel required>
+                    <div *ngIf="ectc.touched && ectc.invalid">
+                          <p class="alert alert-danger" *ngIf="ectc.errors.required">*this Feild is required</p>
+                            </div>
+                  </div>
+        
+          <div class="form-group">
+              <input type="text" name="reloc"  class="form-control" placeholder="Ready to ReLocate.." #reloc="ngModel" ngModel required>
+              <div *ngIf="reloc.touched && reloc.invalid">
+                    <p class="alert alert-danger" *ngIf="reloc.errors.required">*this Feild is required</p>
+                      </div>
+            </div>
+        
+          <div class="form-group">
+              <button class="submit btn-outline-warning float-right">Schedule Interview</button>
+          </div>
+        
+          </form>

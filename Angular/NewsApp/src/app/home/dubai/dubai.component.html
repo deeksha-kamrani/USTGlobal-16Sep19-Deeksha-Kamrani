@@ -1,0 +1,28 @@
+<!-- <div class="container col-md-8 offset-2 card card-body width-20px" *ngFor="let new1 of dubainews">
+    <img src="{{new1.urlToImage}}" alt="">
+    <h1>{{new1.title}}</h1>
+    </div> -->
+
+    <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dubai
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" routerLink="/home">India</a>
+      <a class="dropdown-item" routerLink="/us">United States</a>
+      <a class="dropdown-item" routerLink="/dubai">Dubai</a>
+      <a class="dropdown-item" routerLink="/russia">Russia</a>
+      <a class="dropdown-item" routerLink="/china">China</a>
+        </div>
+      </div>
+
+    <div class="card-columns">
+        <div class="card" *ngFor="let new of dubainews">
+          <div class="card-body">
+            <img src="" alt="">
+            <a href="{{new.url}}"><img src="{{new.urlToImage}}" class="card-img-top" alt="..."></a>
+            <h1>{{new.title}}</h1>
+            
+          </div>
+        </div>
+      </div>

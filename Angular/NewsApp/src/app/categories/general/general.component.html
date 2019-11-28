@@ -1,0 +1,25 @@
+<div class="dropdown">
+    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      General
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" routerLink="/entertainment">Entertainment</a>
+        <a class="dropdown-item" routerLink="/buisness">Buisness</a>
+        <a class="dropdown-item" routerLink="/general">General</a>
+        <a class="dropdown-item" routerLink="/health">Health</a>
+        <a class="dropdown-item" routerLink="/science">Science</a>
+        <a class="dropdown-item" routerLink="/sports">Sports</a>
+        <a class="dropdown-item" routerLink="/technology">Technology</a>
+    </div>
+  </div>
+
+<div class="card-columns">
+    <div class="card" *ngFor="let new of generalnews">
+      <div class="card-body">
+        <img src="" alt="">
+        <a href="{{new.url}}"><img src="{{new.urlToImage}}" class="card-img-top" alt="..."></a>
+        <h1>{{new.title}}</h1>
+        
+      </div>
+    </div>
+  </div>
