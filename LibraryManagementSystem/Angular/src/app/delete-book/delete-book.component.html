@@ -1,0 +1,55 @@
+<div>
+    <div class="container py-5" style="background:gainsboro">
+        <div class="card" style="width: 800px; margin: auto;">
+            <div class="card-header bg-primary text-white">
+                <h4 class="text-uppercase text-center">Delete Book</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-6 col-xs-12">
+                        <form #deleteBook="ngForm" (ngSubmit)="showAllBook()" method="GET">
+
+
+                        </form>
+                    </div>
+                </div><br><br>
+
+                <div class="container ">
+                    <table class="table table-bordered mt-2 table-hover " style="border-style: solid; border-width: 1px;" *ngIf="books">
+                        <thead>
+                            <tr class="text-center text-dark">
+                                <th>Book ID</th>
+                                <th>Book Name</th>
+                                <th>Author1</th>
+                                <th>Author2</th>
+                                <th>Publisher</th>
+                                <th>Year Of Publication</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let book of books" class="text-center text-info">
+                                <td>{{book.bookId}}</td>
+                                <td>{{book.bookName}}</td>
+                                <td>{{book.author1}}</td>
+                                <td>{{book.author2}}</td>
+                                <td>{{book.publisher}}</td>
+                                <td>{{book.yearOfPublication}}</td>
+                                <td><button class="btn btn-danger" type="button" (click)="deleteLibrarian(book.bookId)">Delete
+                                            </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div>
+  </div> -->-->

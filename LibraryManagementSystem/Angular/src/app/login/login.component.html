@@ -1,0 +1,39 @@
+<body>
+    <br><br><br><br>
+    <fieldset style="width: 600px; margin: auto;">
+        <div class="card" style="width: 600px; margin: auto;">
+            <div class="card-header bg-dark text-white">
+                <h4 class="text-uppercase text-center">LogIn</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+
+
+                    <div class="col-md-6 offset-md-3 mt-5">
+                        <div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+                        <form action="" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" method="POST" role="form">
+                            Id <input type="text" name="id" id="id" required minlength="1" placeholder="Enter id...." #id="ngModel" ngModel class="form-control mb-3">
+                            <div *ngIf="id.invalid && id.touched">
+                                <p *ngIf="id.errors.required" class="text-danger">*This field is mandatory
+                                    <p *ngIf="id.errors.minlength" class="text-danger">*This field accepts minimum 3 characters
+                            </div>
+
+
+                            Password <input type="password" name="password" required minlength="8" id="password" placeholder="Enter Password" #password="ngModel" ngModel class="form-control mb-3">
+                            <div *ngIf="password.invalid && password.touched">
+                                <p *ngIf="password.errors.required" class="text-danger">*This field is mandatory
+                                    <p *ngIf="password.errors.minlength" class="text-danger">*This field accepts minimum 8 characters
+                            </div>
+
+
+                            <button class="float-right btn btn-info" type="submit" [disabled]="loginForm.invalid">
+                            Login
+                        </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <br><br><br><br><br><br>
+</body>
