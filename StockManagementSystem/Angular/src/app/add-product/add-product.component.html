@@ -1,0 +1,84 @@
+<div class="col-md-4 offset-md-4 mt-5 card card-body border border-dark">
+    <div class="card-header bg-secondary text-white">
+        <h4 class="text-uppercase text-center">Add Product</h4>
+    </div>
+    <form #addProduct='ngForm' (ngSubmit)='submitForm(addProduct)'>
+
+        <div class="form-group">
+            <label for="productName">
+                product Name:
+            </label>
+            <input type="text" name="productName" class="form-control" #productName="ngModel" ngModel required>
+            <div *ngIf='productName.touched && productName.invalid'>
+                <p class="alert alert-danger" *ngIf='productName.errors.required'>
+                    This field is mandatory
+                </p>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="productCategory">
+                product Category:
+            </label>
+            <input type="text" name="productCategory" class="form-control" #productCategory="ngModel" ngModel required>
+            <div *ngIf='productCategory.touched && productCategory.invalid'>
+                <p class="alert alert-danger" *ngIf='productCategory.errors.required'>
+                    This field is mandatory
+                </p>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="productCategory">
+                product Company:
+            </label>
+            <input type="text" name="productCompany" class="form-control" #productCompany="ngModel" ngModel required>
+            <div *ngIf='productCompany.touched && productCompany.invalid'>
+                <p class="alert alert-danger" *ngIf='productCategory.errors.required'>
+                    This field is mandatory
+                </p>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="productQuantity">
+                product Quantity:
+            </label>
+            <input type="number" name="productQuantity" class="form-control" #productQuantity="ngModel" ngModel required>
+            <div *ngIf='productQuantity.touched && productQuantity.invalid'>
+                <p class="alert alert-danger" *ngIf='productQuantity.errors.required'>
+                    This field is mandatory
+                </p>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="productPrice">
+                product Price:
+            </label>
+            <input type="number" name="productPrice" class="form-control" #productPrice="ngModel" pattern="^[1-9]\d*(\.\d+)?$" ngModel required>
+            <div *ngIf='productPrice.touched && productPrice.invalid'>
+                <p class="alert alert-danger" *ngIf='productPrice.errors.required'>
+                    This field is mandatory
+                </p>
+                <p class="alert alert-danger" *ngIf='productPrice.errors.pattern'>
+                    please enter valid Price
+                </p>
+            </div>
+        </div>
+
+        <div class="btn-group float-right">
+            <button class="btn btn-outline-dark" type="reset">
+                Reset
+            </button> &nbsp;&nbsp;
+            <button class="btn btn-outline-dark" type="submit" [disabled]='addProduct.invalid'>
+                Add
+            </button>
+        </div>
+
+    </form>
+</div>

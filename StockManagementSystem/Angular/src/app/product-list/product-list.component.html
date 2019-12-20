@@ -1,0 +1,135 @@
+<div class="container mt-5">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Company</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let p of products'>
+                <td>{{p.productName}}</td>
+                <td>{{p.productCategory}}</td>
+                <td>{{p.productCompany}}</td>
+                <td>{{p.productQuantity}}</td>
+                <td>{{p.productPrice}}</td>
+                <td>
+                    <button class="btn btn-outline-dark" (click)="deleteProduct(p)">
+                        Delete
+                    </button>
+                </td>
+                <td>
+
+                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal" (click)="selectProduct(p)">
+                        Update
+                    </button>
+
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Update Product</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="productService.getData()">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="card card-body border border-dark">
+                                        <form #updateProduct='ngForm' (ngSubmit)='submitForm(updateProduct)'>
+                                            <input type="hidden" name="productId" #productId='ngModel' [(ngModel)]='selectedProduct.productId'>
+                                            <div class="form-group">
+                                                <label for="productName">
+                                                    product Name:
+                                                </label>
+                                                <input type="text" name="productName" class="form-control" #productName="ngModel" ngModel [(ngModel)]="selectedProduct.productName">
+                                                <div *ngIf='productName.touched && productName.invalid'>
+                                                    <p class="alert alert-danger" *ngIf='productName.errors.required'>
+                                                        This field is mandatory
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="productCategory">
+                                                    product Category:
+                                                </label>
+                                                <input type="text" name="productCategory" class="form-control" #productCategory="ngModel" ngModel [(ngModel)]="selectedProduct.productCategory" pattern="[a-zA-Z][a-zA-Z ]{2,}">
+                                                <div *ngIf='productCategory.touched && productCategory.invalid'>
+                                                    <p class="alert alert-danger" *ngIf='productCategory.errors.required'>
+                                                        This field is mandatory
+                                                    </p>
+                                                    <p class="alert alert-danger" *ngIf='productCategory.errors.pattern'>
+                                                        please enter valid category.. category not cantain numbers
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="productCompany">
+                                                    product Company:
+                                                </label>
+                                                <input type="text" name="productCompany" class="form-control" #productCompany="ngModel" ngModel [(ngModel)]="selectedProduct.productCompany">
+                                                <div *ngIf='productCompany.touched && productCompany.invalid'>
+                                                    <p class="alert alert-danger" *ngIf='productCompany.errors.required'>
+                                                        This field is mandatory
+                                                    </p>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="productQuantity">
+                                                    product Quantity:
+                                                </label>
+                                                <input type="number" name="productQuantity" class="form-control" #productQuantity="ngModel" ngModel [(ngModel)]="selectedProduct.productQuantity">
+                                                <div *ngIf='productQuantity.touched && productQuantity.invalid'>
+                                                    <p class="alert alert-danger" *ngIf='productQuantity.errors.required'>
+                                                        This field is mandatory
+                                                    </p>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="productPrice">
+                                                    product Price:
+                                                </label>
+                                                <input type="number" name="productPrice" class="form-control" #productPrice="ngModel" ngModel id="price" [(ngModel)]="selectedProduct.productPrice">
+                                                <div *ngIf='productPrice.touched && productPrice.invalid'>
+                                                    <p class="alert alert-danger" *ngIf='productPrice.errors.required'>
+                                                        This field is mandatory
+                                                    </p>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="btn-group float-right">
+                                                <button class="btn btn-outline-dark" type="reset">
+                                                    Reset
+                                                </button> &nbsp;&nbsp;
+                                                <button class="btn btn-outline-dark" type="submit" [disabled]='updateProduct.invalid'>
+                                                    Update
+                                                </button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
